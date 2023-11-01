@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic import TemplateView
+
 
 # Create your views here.
-def test(request):
-    return HttpResponse('Hello World!')
+class TestView(TemplateView):
+    template_name = 'accountapp/test.html'

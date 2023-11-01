@@ -1,11 +1,11 @@
 from django.urls import path
 
-from accountapp.views import test
+from accountapp.views import TestView
 
 app_name = "accountapp"
 
 urlpatterns = [
 
-    path('test/', test, name='test')
+    path('test/', TestView.as_view(), name='test'),
 
 ]
