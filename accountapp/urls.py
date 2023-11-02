@@ -6,6 +6,6 @@ app_name = "accountapp"
 
 urlpatterns = [
 
-    path('test/', TestView.as_view(), name='test'),
+    path('', TestView.as_view(), name='test'),
 
 ]
