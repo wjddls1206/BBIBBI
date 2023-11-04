@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block content %}
+
+<h1>
+    main page
+</h1>
+
+<div class = "btn">
+    <a href="{% url 'accountapp:login' %}">
+        login
+    </a>
+</div>
+
+{% endblock%}
