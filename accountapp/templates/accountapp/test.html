@@ -4,31 +4,8 @@
 
 {% block content %}
 
-<h1>
-    main page
-</h1>
-
-<div class = "btn">
-    {% if not user.is_authenticated %}
-    <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-        login
-    </a>
-    {% else %}
-    <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
-        logout
-    </a>
-    {% endif %}
-</div>
-
-<div class="btn">
-    {% if not user.is_authenticated %}
-    <p>MyPage disabled</p>
-    {% else %}
-    <a href="{% url 'accountapp:pill' pk=user.pk %}">
-        MyPage
-    </a>
-
-    {% endif %}
+<div>
+    검색기능 삽입 예정
 </div>
 
 {% endblock%}

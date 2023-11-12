@@ -1,28 +1,39 @@
 {% load static %}
 
 <header>
-  <nav
-    class="-translate-x-60 "
-    style="
-      height: 100vh;
-      z-index: 100;
-      background-color: #f0f2f3;
-      width: 15rem;
-      position: absolute;
-      float: left;
-      transition: 1s;
-    "
-  >
-    <div class="flex justify-end">
-      <button class="mb-5" style="display: flex; width: 100%; justify-content: flex-end;" onclick="onClickClose()">
-        <span class="material-symbols-outlined" style="font-size: 2rem">
-          chevron_left
-        </span>
-      </button>
+  <div class = "header">
+    <div class = "top">
+      <img class = "logo flex justify-center align-center f-1" src = "{% static 'images/logo50.png' %}" alt = "logo">
+
+      {% if not user.is_authenticated %}
+      <a class = "btn login" href="{% url 'accountapp:login' %}?next={{ request.path }}">
+          login
+      </a>
+      {% else %}
+      <a class = "btn login" href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+          logout
+      </a>
+      {% endif %}
     </div>
-    <div>
-      <a href="/"><img src="{% static 'img/logo50.png' %}" alt="bbibbi-logo" /></a>
-    </div>
-  </nav>
+
+    <nav class = "navi">
+      <div class="btn navi-button">
+        {% if not user.is_authenticated %}
+        <p>투약관리</p>
+        {% else %}
+        <a href="{% url 'accountapp:pill' pk=user.pk %}">
+            투약관리
+        </a>
+
+        {% endif %}
+      </div>
+      <div class = "btn navi-button">
+        <p>가까운 약국 찾기</p>
+      </div>
+      <div class = "btn navi-button">
+        <p>약 검색</p>
+      </div>
+    </nav>
+  </div>
 
 </header>
