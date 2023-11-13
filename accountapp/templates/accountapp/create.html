@@ -5,7 +5,7 @@
 
 {% block content %}
 
-    <div style="text-align: center; max-width:500px;margin:4rem auto;">
+    <div class = "yellow-form">
         <div>
             <h4>Account Create</h4>
         </div>
@@ -14,7 +14,7 @@
             <form action="{% url 'accountapp:create' %}" method="post">
                 {% csrf_token %}
                 {% bootstrap_form form %}
-                <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+                <input type="submit" class="btn-submit">
             </form>
         </div>
     </div>

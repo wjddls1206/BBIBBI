@@ -130,14 +130,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [
-
+    #os.path.join(BASE_DIR, 'static')
     BASE_DIR / "static",
-
 ]
 LOGIN_REDIRECT_URL = reverse_lazy('accountapp:test')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')

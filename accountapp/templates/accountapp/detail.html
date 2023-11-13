@@ -4,29 +4,36 @@
 
 {% block content %}
 
-    <div style="text-align: center; max-width:500px;margin:4rem auto;">
+    <div class = "yellow-form2">
+        <div class = "flex justify-center fs-3">
+            <p>
+                회원정보
+            </p>
+
+        </div>
         <div>
             <p>
-                {{ target_user.date_joined }}
+                가입 날짜 : {{ target_user.date_joined }}
             </p>
             <h2>
-                {{ target_user.username }}
+                아이디 : {{ target_user.username }}
             </h2>
-
+        </div>
+        <div class = "navi">
             {% if target_user == user %}
-            <a href="{% url 'accountapp:update' pk=user.pk %}">
-                <p>
-                    Change Info
-                </p>
+            <a class = "btn-sm-y navi-button" href="{% url 'accountapp:update' pk=user.pk %}">
+                    회원정보<br>변경하기
             </a>
-            <a href="{% url 'accountapp:delete' pk=user.pk %}">
-                <p>
-                    Quit
-                </p>
+            <a class = "btn-sm navi-button" href="{% url 'accountapp:delete' pk=user.pk %}">
+
+                    회원 탈퇴하기
+
             </a>
             {% endif %}
 
+
         </div>
+
 
     </div>
 
