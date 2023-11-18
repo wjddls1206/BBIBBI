@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accountapp',
+    'searchpillapp',
+    'pharmacyapp',
     'bootstrap4',
 ]
 

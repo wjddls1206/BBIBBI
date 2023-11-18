@@ -28,10 +28,10 @@
         {% endif %}
       </div>
       <div class = "btn navi-button">
-        <p>가까운 약국 찾기</p>
+        <a href="{% url 'pharmacyapp:pharmacy' %}">가까운 약국 찾기</a>
       </div>
       <div class = "btn navi-button">
-        <p>약 검색</p>
+        <a href="{% url 'searchpillapp:pills' %}">약 검색</a>
       </div>
     </nav>
   </div>
