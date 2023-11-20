@@ -19,6 +19,31 @@
                 아이디 : {{ target_user.username }}
             </h2>
         </div>
+
+        <div class = "calendar">
+            <div class= "cal-header">
+                <div class = "year-month"></div>
+                <div class = "cal-navi">
+                    <button class = "nav-btn go-prev">&lt;</button>
+                    <button class = "nav-btn go-today">Today</button>
+                    <button class = "nav-btn go-next">&gt;</button>
+
+                </div>
+            </div>
+            <div class = "cal-main">
+                <div class="days">
+                    <div class = "day">일</div>
+                    <div class = "day">월</div>
+                    <div class = "day">화</div>
+                    <div class = "day">수</div>
+                    <div class = "day">목</div>
+                    <div class = "day">금</div>
+                    <div class = "day">토</div>
+
+                </div>
+                <div class = "dates"></div>
+            </div>
+        </div>
         <div class = "navi">
             {% if target_user == user %}
             <a class = "btn-sm-y navi-button" href="{% url 'accountapp:update' pk=user.pk %}">

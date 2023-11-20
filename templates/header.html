@@ -17,12 +17,12 @@
     </div>
 
     <nav class = "navi">
-      <div class="btn navi-button">
+      <div class="btn navi-button" onclick = "checkLogin()">
         {% if not user.is_authenticated %}
-        <p>투약관리</p>
+          투약관리
         {% else %}
         <a href="{% url 'accountapp:pill' pk=user.pk %}">
-            투약관리
+          투약관리
         </a>
 
         {% endif %}

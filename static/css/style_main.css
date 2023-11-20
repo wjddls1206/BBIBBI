@@ -84,7 +84,7 @@
 }
 
 .yellow-form2{
-    max-width:500px;
+    max-width : 1000px;
     margin:4rem auto;
     border : 5px solid #FADF70;
     border-radius : 1rem;
@@ -121,4 +121,86 @@
     border-radius : 1rem;
     padding : 1rem 2rem;
 
+}
+
+.popup {
+    z-index : 1;
+    position : absolute ;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    min-width : 300px;
+    max-width : 600px;
+    background-color : #fff;
+    border-radius : 15px;
+    box-shadow : 0 2px 55px -25px rgb(0 0 0 / 100%);
+
+}
+
+.calendar {
+    width : 600px;
+    margin-top : 50px;
+    margin-left : 200px;
+    margin-right : 200px;
+}
+
+.cal-header {
+    display : flex ;
+    justify-content : space-evenly;
+    align-items : center;
+
+}
+
+.year-month {
+    font-size : 35px;
+}
+
+.cal-navi {
+    display : flex ;
+    width : 150px;
+    border : 1px solid var(--dark);
+    border-radius : 5px;
+}
+
+.nav-btn {
+    width : 28px;
+    height : 30px;
+    border : none;
+    font-size : 16px;
+    line-height : 34px;
+    background-color : transparent;
+    cursor : pointer;
+    margin : 10px;
+}
+
+.go-today {
+    width : 75px;
+    border-left : 1px solid var(--dark);
+    border-right : 1px solid var(--dark);
+}
+
+.days {
+    display : flex;
+    margin : 25px 0 10px;
+}
+
+.day {
+    width : calc(100% /7);
+    text-align : center;
+}
+
+.dates {
+    display : flex ;
+    flex-flow : row wrap;
+    height : 500px;
+    border-top : 1px solid var(--dark);
+    border-right : 1px solid var(--dark);
+}
+
+.date {
+    width : calc(100%/7);
+    padding : 15px;
+    text-align : right;
+    border-bottom : 1px solid var(--dark);
+    border-left : 1px solid var(--dark);
 }
