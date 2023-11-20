@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Prediction Result</h2>
+    {% if prediction %}
+        <p>The predicted class is: {{ prediction }}</p>
+    {% else %}
+        <p>No prediction available.</p>
+    {% endif %}
+{% endblock %}

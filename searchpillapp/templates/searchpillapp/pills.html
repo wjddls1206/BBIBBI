@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
-
-    <div class = "yellow-form">
+    <div class="yellow-form">
         <div>
-            <h4>searchpill</h4>
+            <h4>Search Pill</h4>
+            <form method="post" class="post-form my-3" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    <label for="imgfile">제품 사진: </label>
+                    <input type="file" class="form-control" name="imgfile" id="imgfile">
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">제출</button>
+            </form>
         </div>
-        
     </div>
-
-{% endblock%}
+{% endblock %}
