@@ -6,7 +6,7 @@ from tensorflow.keras.layers import *
 from tensorflow.keras.models import *
 from searchpillapp.forms import ProductForm
 
-model_path = 'D:/capstone/BBIBBI/searchpillapp/Pill_image_pretrained_mobile_model_2.h5'
+model_path = 'C:/Users/dltnw/Desktop/bbibbi/BBIBBI/searchpillapp/Pill_image_pretrained_mobile_model_2.h5'
 model = keras.models.load_model(model_path)
 
 class_list = ['가네탑에스연질캡슐',
