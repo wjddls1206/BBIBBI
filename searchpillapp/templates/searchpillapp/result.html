@@ -2,10 +2,35 @@
 {% load static %}
 
 {% block content %}
-    <h2>Prediction Result</h2>
-    {% if prediction %}
-        <p>The predicted class is: {{ prediction }}</p>
-    {% else %}
-        <p>No prediction available.</p>
-    {% endif %}
+
+    <div class = "yellow-form">
+        <h2>입력한 사진과 비슷한 알약을 찾았어요!</h2>
+
+        {% if prediction %}
+            <div>
+                <div>찾으시는 알약이 </div>
+                <div class="yellow-form">
+                    "{{ prediction }}"
+                </div>
+                <div class = "m-3">맞나요?</div>
+                <div class = "flex justify-evenly">
+                    <div class = "btn-sm" >
+                        <a href = "#">투약관리<br>추가</a>
+                    </div>
+                    <div class = "btn-sm">
+                        <a href = "{% url 'searchpillapp:pills' %}">다시 찾기</a>
+                    </div>
+                </div>
+
+            </div>
+        {% else %}
+            <p>알약을 찾지 못했어요.</p>
+        {% endif %}
+
+        <div class = "yellow-form">
+            해당 약 정보 출력하기
+        </div>
+    </div>
+
+
 {% endblock %}

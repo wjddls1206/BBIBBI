@@ -4,11 +4,51 @@
 
 {% block content %}
 
-    <div class = "yellow-form">
+    <div class = "yellow-form3 flex justify-evenly">
         <div>
-            <h4>pharmacyapp</h4>
-        </div>
+            <div id="map" style="width:500px;height:400px;"></div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=890eb7fd7b55736becc3388f215623f7"></script>
+            <script>
+                var container = document.getElementById('map');
+                var options = {
+                    center: new kakao.maps.LatLng(36.608804, 127.289116),
+                    level: 3
+                };
 
+                var map = new kakao.maps.Map(container, options);
+                var position =  new kakao.maps.LatLng(36.608804, 127.289116);
+                var marker = new kakao.maps.Marker({
+                    position: position,
+                    clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+                });
+
+                marker.setMap(map);
+
+                var iwContent = '<div style="padding:5px;">Hello World!</div>', iwRemoveable = true;
+                var infowindow = new kakao.maps.InfoWindow({
+                    content : iwContent,
+                    removable : iwRemoveable
+                });
+
+                kakao.maps.event.addListener(marker, 'click', function() {
+              // 마커 위에 인포윈도우를 표시합니다
+                    infowindow.open(map, marker);
+                });
+
+            </script>
+        </div>
+        <div>
+            <div class = "title">
+                근처 약국 리스트
+            </div>
+            <ul>약국1</ul>
+            <ul>약국1</ul>
+            <ul>약국1</ul>
+            <ul>약국1</ul>
+            <ul>약국1</ul>
+
+
+        </div>
     </div>
 
 {% endblock%}
